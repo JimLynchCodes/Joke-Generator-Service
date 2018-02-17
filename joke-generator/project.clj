@@ -11,4 +11,4 @@
                            :output-dir    "target/joke-generator"
                            :target        :nodejs
                            :language-in   :ecmascript5
-                           :optimizations :none}}})
+                           :optimizations :none}} :defaults {:role "arn:aws:iam::954459734159:role/cljs-lambda-default"}})
