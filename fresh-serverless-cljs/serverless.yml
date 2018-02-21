@@ -1,4 +1,4 @@
-service: joke-generator-firebase
+service: fresh-serverless-cljs
 
 provider:
   name: aws
@@ -6,7 +6,7 @@ provider:
 
 functions:
   echo:
-    cljs: joke-generator-firebase.core/echo
+    cljs: fresh-serverless-cljs.core/echo
     events:
       - http:
           path: echo

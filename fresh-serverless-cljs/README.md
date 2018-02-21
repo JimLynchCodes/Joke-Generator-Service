@@ -1,4 +1,4 @@
-# joke-generator-firebase
+# fresh-serverless-cljs
 
 # Deploy
 

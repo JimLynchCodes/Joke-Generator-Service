@@ -106,10 +106,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/joke-generator/dev/1517637109371-2018-02-03T05:51:49.371Z/joke-generator.zip"
+                "S3Key": "serverless/joke-generator/dev/1519172599624-2018-02-21T00:23:19.624Z/joke-generator.zip"
               },
               "FunctionName": "joke-generator-dev-echo",
-              "Handler": "index.joke_generator_core_SLASH_echo",
+              "Handler": "index.joke_generator_core_SLASH_getJoke",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -125,14 +125,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "EchoLambdaVersionqmMfjzyuOpa2vqfcOLIDUYUvTNHp1ZKpxGJdjT4E34": {
+          "EchoLambdaVersionUnKKidhdtBeDRtiyh2JaqJV80td7u6ethUOmEWDTM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "EchoLambdaFunction"
               },
-              "CodeSha256": "qmMfjzyuOpa2vqf+cOLIDUYUvTNHp1ZKpxGJdjT4E34="
+              "CodeSha256": "UnKKidhd+tBeDRtiyh2JaqJV80td7u6e+thUOmEWDTM="
             }
           },
           "ApiGatewayRestApi": {
@@ -141,7 +141,7 @@
               "Name": "dev-joke-generator"
             }
           },
-          "ApiGatewayResourceEcho": {
+          "ApiGatewayResourceGetjoke": {
             "Type": "AWS::ApiGateway::Resource",
             "Properties": {
               "ParentId": {
@@ -150,19 +150,19 @@
                   "RootResourceId"
                 ]
               },
-              "PathPart": "echo",
+              "PathPart": "getJoke",
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
               }
             }
           },
-          "ApiGatewayMethodEchoPost": {
+          "ApiGatewayMethodGetjokePost": {
             "Type": "AWS::ApiGateway::Method",
             "Properties": {
               "HttpMethod": "POST",
               "RequestParameters": {},
               "ResourceId": {
-                "Ref": "ApiGatewayResourceEcho"
+                "Ref": "ApiGatewayResourceGetjoke"
               },
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
@@ -195,7 +195,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1517637109398": {
+          "ApiGatewayDeployment1519172599698": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -204,7 +204,7 @@
               "StageName": "dev"
             },
             "DependsOn": [
-              "ApiGatewayMethodEchoPost"
+              "ApiGatewayMethodGetjokePost"
             ]
           },
           "EchoLambdaPermissionApiGateway": {
@@ -250,7 +250,7 @@
           "EchoLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "EchoLambdaVersionqmMfjzyuOpa2vqfcOLIDUYUvTNHp1ZKpxGJdjT4E34"
+              "Ref": "EchoLambdaVersionUnKKidhdtBeDRtiyh2JaqJV80td7u6ethUOmEWDTM"
             }
           },
           "ServiceEndpoint": {
@@ -293,17 +293,17 @@
     ],
     "functions": {
       "echo": {
-        "cljs": "joke-generator.core/echo",
+        "cljs": "joke-generator.core/getJoke",
         "events": [
           {
             "http": {
-              "path": "echo",
+              "path": "getJoke",
               "method": "post",
               "integration": "AWS_PROXY"
             }
           }
         ],
-        "handler": "index.joke_generator_core_SLASH_echo",
+        "handler": "index.joke_generator_core_SLASH_getJoke",
         "package": {
           "artifact": "/Users/jameslynch/Git-Projects/Joke-Generator-Service/joke-generator/.serverless/joke-generator.zip"
         },
@@ -315,7 +315,7 @@
     "__cljsArtifact": "/Users/jameslynch/Git-Projects/Joke-Generator-Service/joke-generator/.serverless/joke-generator.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/joke-generator/dev/1517637109371-2018-02-03T05:51:49.371Z",
+    "artifactDirectoryName": "serverless/joke-generator/dev/1519172599624-2018-02-21T00:23:19.624Z",
     "artifact": ""
   }
 }

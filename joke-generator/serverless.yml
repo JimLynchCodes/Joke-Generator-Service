@@ -6,10 +6,10 @@ provider:
 
 functions:
   echo:
-    cljs: joke-generator.core/echo
+    cljs: joke-generator.core/getJoke
     events:
       - http:
-          path: echo
+          path: getJoke
           method: post
 
 plugins:
