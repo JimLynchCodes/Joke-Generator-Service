@@ -1,6 +1,5 @@
 (ns joke-generator.core
-  (:require [cljs-lambda.macros :refer-macros [defgateway]])
-  )
+  (:require [cljs-lambda.macros :refer-macros [defgateway]]))
 
 (def jokes
   [{:setup "A guy walked into a bar..." :punchline "Ouch!" :clean? true}
