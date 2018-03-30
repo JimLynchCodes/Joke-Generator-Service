@@ -6,4 +6,4 @@ pom.xml
 /target/
 .lein*
 /node_modules
-.idea
+.idea/
